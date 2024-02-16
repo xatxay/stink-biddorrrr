@@ -28,6 +28,8 @@ To clone the repository, use the following commands:
 git clone https://github.com/xatxay/stink-bid-rust
 ```
 
+Typescript version available [here](https://github.com/xatxay/stink-biddorrr)
+
 ## Future Features
 
 -Multiple exchanges support
