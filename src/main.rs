@@ -161,13 +161,13 @@ fn calculate_position(price: &f64, symbol: &str) -> Option<FormattedPosition> {
             twenty_five_percent_size: format!("{:.0}", size.twenty_five_percent_size.round()),
             thirty_percent_size: format!("{:.0}", size.thirty_percent_size.round()),
         },
-        "TAOUSDT" => FormattedPosition {
-            twenty_percent_price: format!("{:.2}", price.twenty_percent_price),
-            twenty_five_percent_price: format!("{:.2}", price.twenty_five_percent_price),
-            thirty_percent_price: format!("{:.2}", price.thirty_percent_price),
-            twenty_percent_size: format!("{:.3}", size.twenty_percent_size),
-            twenty_five_percent_size: format!("{:.3}", size.twenty_five_percent_size),
-            thirty_percent_size: format!("{:.3}", size.thirty_percent_size),
+        "INJUSDT" => FormattedPosition {
+            twenty_percent_price: format!("{:.4}", price.twenty_percent_price),
+            twenty_five_percent_price: format!("{:.4}", price.twenty_five_percent_price),
+            thirty_percent_price: format!("{:.4}", price.thirty_percent_price),
+            twenty_percent_size: format!("{:.1}", size.twenty_percent_size),
+            twenty_five_percent_size: format!("{:.1}", size.twenty_five_percent_size),
+            thirty_percent_size: format!("{:.1}", size.thirty_percent_size),
         },
         "WLDUSDT" => FormattedPosition {
             twenty_percent_price: format!("{:.3}", price.twenty_percent_price),
@@ -305,7 +305,7 @@ async fn main() {
         env::var("BATCH_CANCEL_ORDER_URL").expect("batch cancel order url is missing");
 
     loop {
-        let symbols = vec!["BEAMUSDT", "TAOUSDT", "WLDUSDT"];
+        let symbols = vec!["BEAMUSDT", "INJUSDT", "WLDUSDT"];
         let futures = symbols.into_iter().map(|symbol| get_kline(&symbol));
         let results = futures::future::join_all(futures).await;
         let mut cancel_order_data: Vec<CancelOrderData> = Vec::new();
