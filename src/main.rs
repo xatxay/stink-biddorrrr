@@ -161,13 +161,13 @@ fn calculate_position(price: &f64, symbol: &str) -> Option<FormattedPosition> {
             twenty_five_percent_size: format!("{:.0}", size.twenty_five_percent_size.round()),
             thirty_percent_size: format!("{:.0}", size.thirty_percent_size.round()),
         },
-        "INJUSDT" => FormattedPosition {
-            twenty_percent_price: format!("{:.4}", price.twenty_percent_price),
-            twenty_five_percent_price: format!("{:.4}", price.twenty_five_percent_price),
-            thirty_percent_price: format!("{:.4}", price.thirty_percent_price),
-            twenty_percent_size: format!("{:.1}", size.twenty_percent_size),
-            twenty_five_percent_size: format!("{:.1}", size.twenty_five_percent_size),
-            thirty_percent_size: format!("{:.1}", size.thirty_percent_size),
+        "SEIUSDT" => FormattedPosition {
+            twenty_percent_price: format!("{:.5}", price.twenty_percent_price),
+            twenty_five_percent_price: format!("{:.5}", price.twenty_five_percent_price),
+            thirty_percent_price: format!("{:.5}", price.thirty_percent_price),
+            twenty_percent_size: format!("{}", size.twenty_percent_size.round()),
+            twenty_five_percent_size: format!("{}", size.twenty_five_percent_size.round()),
+            thirty_percent_size: format!("{}", size.thirty_percent_size.round()),
         },
         "AGIXUSDT" => FormattedPosition {
             twenty_percent_price: format!("{:.5}", price.twenty_percent_price),
