@@ -305,7 +305,7 @@ async fn main() {
         env::var("BATCH_CANCEL_ORDER_URL").expect("batch cancel order url is missing");
 
     loop {
-        let symbols = vec!["BEAMUSDT", "INJUSDT", "AGIXUSDT"];
+        let symbols = vec!["BEAMUSDT", "SEIUSDT", "AGIXUSDT"];
         let futures = symbols.into_iter().map(|symbol| get_kline(&symbol));
         let results = futures::future::join_all(futures).await;
         let mut cancel_order_data: Vec<CancelOrderData> = Vec::new();
