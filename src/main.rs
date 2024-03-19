@@ -145,7 +145,7 @@ fn calculate_position(price: &f64, symbol: &str) -> Option<FormattedPosition> {
     };
     let size = Quantity {
         twenty_percent_size: 1000.0 / price.twenty_percent_price,
-        twenty_five_percent_size: 1500.0 / price.twenty_five_percent_price,
+        twenty_five_percent_size: 1000.0 / price.twenty_five_percent_price,
         thirty_percent_size: 2000.0 / price.thirty_percent_price,
     };
 
